@@ -1,0 +1,146 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} CH {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+	<div class="content">
+		<div class="page-inner">
+			<h4 class="page-title">Temperaturas</h4>
+			
+			<div class="row">
+			
+
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							
+							<div class="card-title">
+								<h3>Temperaturas (8 - 12 Nov) ciudades principales de Colombia </h3></div>
+						</div>
+						<div class="card-body">
+							<div class="chart-container">
+								<canvas id="multipleLineChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				
+				<label for="ciudad">Seleccione ciudad</label>
+				<select name="Ciudades de colombia"  class="form-control">
+					
+					{% for item in Dict %}	
+						<option value="{{ item }}"  onclick="myFunction()" >{{ item }}</option>
+					{% endfor %}
+					
+				</select>
+				<ul  class="card-tasks table">
+
+						<li>Temperatura Promedio </li> 
+						<input type='text' id='prom' disabled/><br>
+						<li>Temperatura Máxima   </li> 
+						<input type='text' id='max' disabled/><br>
+						<li>Temperatura Mínima  </li> 
+						<input type='text' id='min' disabled/><br>
+
+			</ul>
+		
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="/static/assets/js/setting-demo2.js"></script>
+
+	<script type="text/javascript">
+		var received_data  = "{{ Dict|safe }}";
+		
+		data2=received_data.replace(/'/g, '"')	
+		
+		data_json = JSON.parse(data2);
+		console.log('data_json',data_json)
+		data_={}
+		$('select').on('change', function() {
+			for (x in data_json) {
+				console.log('data>',data_json)
+			//console.log(data_json[x].name);
+			
+			 if (this.value== data_json[x].city){
+				var randomColor = Math.floor(Math.random()*16777215).toString(16);
+				data_ ={
+					label: data_json[x].city,
+					borderColor: "#"+randomColor,
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#1d7af3",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 0.2,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 4,
+					data: data_json[x].totaltemp
+				}	
+				document.getElementById("prom").value = data_json[x].temp_prom+'ºC';		
+				document.getElementById("max").value = data_json[x].temp_max+'ºC';		
+				document.getElementById("min").value = data_json[x].temp_min+'ºC';			  
+			 }	
+			
+			}	var arr1 = []
+				let i = 0; do {  arr1.push(i+'hrs'); i += 1; } while (i <= 120);
+				
+				arr1[24]='8 Noviembre'
+				arr1[48]='9 Noviembre'
+				arr1[72]='10 Noviembre'
+				arr1[96]='11 Noviembre'
+				arr1[120]='12 Noviembre'
+				
+
+				var myMultipleLineChart = new Chart(multipleLineChart, {
+										
+					type: 'line',
+					data: {
+						labels: arr1,
+						datasets: [data_]
+					},
+					options : {
+						responsive: true, 
+						maintainAspectRatio: false,
+						legend: {
+							position: 'bottom',
+						},
+						tooltips: {
+							bodySpacing: 4,
+							mode:"nearest",
+							intersect: 0,
+							position:"nearest",
+							xPadding:10,
+							yPadding:10,
+							caretPadding:10
+						},
+						layout:{
+							padding:{left:15,right:15,top:15,bottom:15}
+						}
+			}
+		});
+
+
+			});
+		
+
+	
+
+
+	</script>
+
+{% endblock javascripts %}

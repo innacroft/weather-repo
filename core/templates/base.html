@@ -1,0 +1,142 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Charts {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	<div class="content">
+		<div class="page-inner">
+			<h4 class="page-title">Chart.js</h4>
+			<div class="page-category">Simple yet flexible JavaScript charting for designers & developers. Please checkout their <a href="https://www.chartjs.org/" target="_blank">full documentation</a>.</div>
+			<div class="row">
+			
+
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-title">Multiple Line Chart</div>
+						</div>
+						<div class="card-body">
+							<div class="chart-container">
+								<canvas id="multipleLineChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+				<label for="ciudad">Seleccione ciudad</label>
+				<select name="Ciudades de colombia"  class="form-control">
+					
+					<option value="Bogotá">Bogotá</option>
+					<option value="Medellin">Medellin</option>
+					<option value="Cali">Cali</option>
+				</select>
+		
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="/static/assets/js/setting-demo2.js"></script>
+	<script>
+		
+		var	multipleLineChart = document.getElementById('multipleLineChart').getContext('2d')
+		data_={}
+		$('select').on('click', function() {
+			 if (this.value=='Bogotá'){
+
+				data_ ={
+					label: "Bogotá",
+					borderColor: "#1d7af3",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#1d7af3",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 4,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 3,
+					data: [27, 22, 14, 12, 1, 28, 15, 5, 23, 27, 12, 27, 5, 13, 26, 16, 26, 6, 17, 15, 14, 22, 22, 4, 14, 6, 2, 13, 10, 7]
+				}
+
+				  
+			 }
+			 
+			 if (this.value=='Medellin'){
+				data_ ={
+					label: "Medellin",
+					borderColor: "#1d7af3",
+					pointBorderColor: "#FFF",
+					pointBackgroundColor: "#1d7af3",
+					pointBorderWidth: 2,
+					pointHoverRadius: 4,
+					pointHoverBorderWidth: 1,
+					pointRadius: 4,
+					backgroundColor: 'transparent',
+					fill: true,
+					borderWidth: 3,
+					data: [12, 21, 2, 1, 2, 17, 12, 21, 8, 17, 25, 29, 1, 7, 21, 7, 12, 8, 30, 10, 22, 26, 9, 26, 9, 21, 20, 28, 21, 7]
+				}
+				}
+			
+			
+				var myMultipleLineChart = new Chart(multipleLineChart, {
+			type: 'line',
+			data: {
+				labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11", "12", "13", "14", "15", "16", "17", "18", "19", "20","21", "22", "23", "24", "25", "26", "27", "28", "29", "30","31"],
+				datasets: [data_]
+			},
+			options : {
+				responsive: true, 
+				maintainAspectRatio: false,
+				legend: {
+					position: 'top',
+				},
+				tooltips: {
+					bodySpacing: 4,
+					mode:"nearest",
+					intersect: 0,
+					position:"nearest",
+					xPadding:10,
+					yPadding:10,
+					caretPadding:10
+				},
+				layout:{
+					padding:{left:15,right:15,top:15,bottom:15}
+				}
+			}
+		});
+
+
+			});
+		
+
+	
+
+		// Chart with HTML Legends
+
+		
+	
+
+		var myLegendContainer = document.getElementById("myChartLegend");
+
+		// generate HTML legend
+		myLegendContainer.innerHTML = myHtmlLegendsChart.generateLegend();
+
+		// bind onClick event to all LI-tags of the legend
+		var legendItems = myLegendContainer.getElementsByTagName('li');
+		for (var i = 0; i < legendItems.length; i += 1) {
+			legendItems[i].addEventListener("click", legendClickCallback, false);
+		}
+
+	</script>
+
+{% endblock javascripts %}
