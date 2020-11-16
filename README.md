@@ -1,6 +1,5 @@
 
   
-
 # Openweather API INTEGRATION
 
   
@@ -12,16 +11,12 @@
 This application consume a weather API and get last 5 days and 24 hours on main citys in Colombia from https://openweathermap.org/history.
 
 On a custom Dashboard data average, max and min Temperature is plotted.
-
-  
+![](https://github.com/innacroft/weather-repo/blob/master/dashboard.PNG)
+![](https://github.com/innacroft/weather-repo/blob/master/dashboard2.png)
   
 
 - [Django Dashboard Atlantis Dark - Demo](https://django-dashboard-atlantis-dark.appseed.us/) - LIVE Deployment
-
-- [Django Dashboard Atlantis Dark - Docs](https://docs.appseed.us/admin-dashboards/django-dashboard-atlantis-dark/) - Product documentation
-
-  
-  
+ 
   
 
 ## Technologies:
