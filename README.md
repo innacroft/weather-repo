@@ -3,10 +3,10 @@
 # Openweather API INTEGRATION
 
 This application consume a weather API and get last 5 days and 24 hours on main citys in Colombia from https://openweathermap.org/history.
-![](https://github.com/innacroft/weather-repo/blob/master/main.PNG)
+![](https://github.com/innacroft/weather-repo/blob/master/dashboard.PNG)
 On a custom Dashboard data average, max and min Temperature are plotted by selected city.
 ![](https://github.com/innacroft/weather-repo/blob/master/select1.PNG)
-![](https://github.com/innacroft/weather-repo/blob/master/selected.PNG)
+![](https://github.com/innacroft/weather-repo/blob/master/selected1.PNG)
 
 
   
