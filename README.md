@@ -2,17 +2,13 @@
   
 # Openweather API INTEGRATION
 
-  
-
-![](https://github.com/innacroft/weather-repo/blob/master/dashboard_select.PNG)
-
-  
-
 This application consume a weather API and get last 5 days and 24 hours on main citys in Colombia from https://openweathermap.org/history.
-
+![](https://github.com/innacroft/weather-repo/blob/master/main.PNG)
 On a custom Dashboard data average, max and min Temperature are plotted by selected city.
-![](https://github.com/innacroft/weather-repo/blob/master/dashboard.PNG)
-![](https://github.com/innacroft/weather-repo/blob/master/dashboardmain.PNG)
+![](https://github.com/innacroft/weather-repo/blob/master/select.PNG)
+![](https://github.com/innacroft/weather-repo/blob/master/selected.PNG)
+
+
   
 
 - [Django Dashboard Atlantis Dark - Demo](https://django-dashboard-atlantis-dark.appseed.us/) - LIVE Deployment
@@ -82,6 +78,9 @@ arr1[72]='12 Noviembre'
 arr1[96]='13 Noviembre'
 
 arr1[120]='14 Noviembre'
+
+You must change Tittle on graph on base.html on h3 
+    <h3>Temperaturas (10 - 14 Nov 2020) ciudades principales de Colombia </h3></div>
 
 Once you update all data you can reload url on /weather/ route and results are plotted on graph.
 
