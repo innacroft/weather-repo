@@ -26,6 +26,7 @@ On a custom Dashboard data average, max and min Temperature are plotted by selec
 3. Django
 4. Javascript
 5. ChartJs
+6. Celery
 
     
 
