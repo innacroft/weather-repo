@@ -80,7 +80,7 @@ arr1[96]='13 Noviembre'
 arr1[120]='14 Noviembre'
 
 You must change Tittle on graph on base.html on h3 
-    <h3>Temperaturas (10 - 14 Nov 2020) ciudades principales de Colombia </h3></div>
+   >Temperaturas (10 - 14 Nov 2020) ciudades principales de Colombia 
 
 Once you update all data you can reload url on /weather/ route and results are plotted on graph.
 
