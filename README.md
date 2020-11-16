@@ -59,28 +59,49 @@ Cities and dates are saved on a dictionaries inside the code:
 
     weather/views/Cities
 
+  Cities=[   
+
+    {'id_api' : 3688689,
+    'city' : 'BOGOTA',
+    'country': 'CO',
+    'coord_lon' : -74.08, #2 decimal
+    'coord_lat' :4.60 #2 decimal
+    },
+
+    ]
+
+You can change, add  or delete each city on the dict, if you want to obtain different city weather info.
+
  (This information was extracted from weather API on a list of cities https://openweathermap.org/history )
 
 *Dates: Weater api returns temperature of each hour on a specific day, for getting 5 specific days before your current day. You must include this specific timestamp on the dictionary:
 
     /weather/views/timestamps
+    
+    timestamps=[
+            {'1':'1605052800'}, #Time stamp for 11 Nov 0 h, h min, h secs , timezone GMT and year 2020
+            {'2':'1605139200'}, #Time stamp for 12 Nov 0 h, h min, h secs , timezone GMT and year 2020
+            {'3':'1605225600'}, #Time stamp for 13 Nov 0 h, h min, h secs , timezone GMT and year 2020
+            {'4':'1605312000'}, #Time stamp for 14 Nov 0 h, h min, h secs , timezone GMT and year 2020
+            {'5':'1605398400'}, #Time stamp for 15 Nov 0 h, h min, h secs , timezone GMT and year 2020
+            ]
 
  (This information was generated using a generic timestamp generator https://timestampgenerator.com/ with specific 5 days ago datetimes on hour. min and secs in zero values )
 
 You must update date names for show on dashboard on template base.html
 
-arr1[24]='10 Noviembre'
+arr1[24]='11 Noviembre'
 
-arr1[48]='11 Noviembre'
+arr1[48]='12 Noviembre'
 
-arr1[72]='12 Noviembre'
+arr1[72]='13 Noviembre'
 
-arr1[96]='13 Noviembre'
+arr1[96]='14 Noviembre'
 
-arr1[120]='14 Noviembre'
+arr1[120]='15 Noviembre'
 
 You must change Tittle on graph on base.html on h3 
-   >Temperaturas (10 - 14 Nov 2020) ciudades principales de Colombia 
+   >Temperaturas (11 - 15 Nov 2020) ciudades principales de Colombia 
 
 Once you update all data you can reload url on /weather/ route and results are plotted on graph.
 
