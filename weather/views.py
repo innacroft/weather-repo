@@ -8,7 +8,7 @@ from .tasks import make_get_req
 from  .models import City
 
 
-Citys=[ #BOGOTA, MEDELLIN,CALI, BARRANQUILLA,CARTAGENA,SOACHA, CUCUTA, SOLEDAD,BUCARAMANGA, BELLO
+Cities=[ #BOGOTA, MEDELLIN,CALI, BARRANQUILLA,CARTAGENA,SOACHA, CUCUTA, SOLEDAD,BUCARAMANGA, BELLO
     {'id_api' : 3688689,
     'city' : 'BOGOTA',
     'country': 'CO',
@@ -74,17 +74,18 @@ Citys=[ #BOGOTA, MEDELLIN,CALI, BARRANQUILLA,CARTAGENA,SOACHA, CUCUTA, SOLEDAD,B
 
     ]
 
-timestamps=[{'8':'1604793600'},
-            {'9':'1604880000'},
-            {'10':'1604793600'},
-            {'11':'1604793600'},
-            {'12':'1605139200'},
+#https://timestampgenerator.com/
+timestamps=[{'1':'1605052800'},
+            {'2':'1605139200'},
+            {'3':'1605225600'},
+            {'4':'1605312000'},
+            {'5':'1605398400'},
             ]
 
 
 def weather(request):
     Dict={}
-    for city in Citys:
+    for city in Cities:
         city_name=city.get('city')
         totaltemp=[]
         Dict2={}

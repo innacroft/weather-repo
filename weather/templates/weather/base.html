@@ -73,7 +73,6 @@
 		$('select').on('change', function() {
 			for (x in data_json) {
 				console.log('data>',data_json)
-			//console.log(data_json[x].name);
 			
 			 if (this.value== data_json[x].city){
 				var randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -99,11 +98,11 @@
 			}	var arr1 = []
 				let i = 0; do {  arr1.push(i+'hrs'); i += 1; } while (i <= 120);
 				
-				arr1[24]='8 Noviembre'
-				arr1[48]='9 Noviembre'
-				arr1[72]='10 Noviembre'
-				arr1[96]='11 Noviembre'
-				arr1[120]='12 Noviembre'
+				arr1[24]='10 Noviembre'
+				arr1[48]='11 Noviembre'
+				arr1[72]='12 Noviembre'
+				arr1[96]='13 Noviembre'
+				arr1[120]='14 Noviembre'
 				
 
 				var myMultipleLineChart = new Chart(multipleLineChart, {
