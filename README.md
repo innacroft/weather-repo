@@ -4,15 +4,15 @@
 
   
 
-![Cuba Sets All-Time Hottest Temperature Record - WeatherNation](https://www.weathernationtv.com/app/uploads/2018/08/100-degree-fahrenheit-thermometer.png)
+![](https://github.com/innacroft/weather-repo/blob/master/dashboard_select.PNG)
 
   
 
 This application consume a weather API and get last 5 days and 24 hours on main citys in Colombia from https://openweathermap.org/history.
 
-On a custom Dashboard data average, max and min Temperature is plotted.
+On a custom Dashboard data average, max and min Temperature is plotted by selected city.
 ![](https://github.com/innacroft/weather-repo/blob/master/dashboard.PNG)
-![](https://github.com/innacroft/weather-repo/blob/master/dashboard2.png)
+![](https://github.com/innacroft/weather-repo/blob/master/dashboardmain.PNG))
   
 
 - [Django Dashboard Atlantis Dark - Demo](https://django-dashboard-atlantis-dark.appseed.us/) - LIVE Deployment
