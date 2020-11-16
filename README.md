@@ -12,7 +12,7 @@ This application consume a weather API and get last 5 days and 24 hours on main 
 
 On a custom Dashboard data average, max and min Temperature are plotted by selected city.
 ![](https://github.com/innacroft/weather-repo/blob/master/dashboard.PNG)
-![](https://github.com/innacroft/weather-repo/blob/master/dashboardmain.PNG))
+![](https://github.com/innacroft/weather-repo/blob/master/dashboardmain.PNG)
   
 
 - [Django Dashboard Atlantis Dark - Demo](https://django-dashboard-atlantis-dark.appseed.us/) - LIVE Deployment
