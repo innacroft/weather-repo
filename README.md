@@ -44,6 +44,7 @@ You can run the project using:
 >     python manage.py migrate
 >     python manage.py createsuperuser #create user for loggin on dashboard
 >     loggin into dashboard
+GO to Features instructions
 >     python manage.py runserver
 >     Go to http://localhost:8000/weather/
 
